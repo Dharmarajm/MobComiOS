@@ -1,0 +1,74 @@
+<ion-view cache-view="false">
+  <link href="css/employeelist.css" rel="stylesheet" cache-view="false">
+  
+  <ion-header-bar>
+         <div class="row">    
+             <div class="col col-10" ng-click="back()"><i class="button-icon ion-android-arrow-back close"></i></div>                   
+             <div class="col col-80" > <p class="titletext">Assign Project</p></div>
+             <div class="col col-10"><i class="button-icon ion-log-out close" ng-click="logout()"></i></div>
+         </div>
+  </ion-header-bar>   
+
+
+  <ion-content class="content_back" padding="true" has-bouncing="false">
+
+     <h3><center style="color:chocolate">{{EmployeeName}}</center></h3>
+  
+     <h5><center>Project List</center></h5>
+        <ul class="list">
+
+        <li class="item item-checkbox" ng-repeat="option in AllProject" >
+           <label class="checkbox">
+             <input type="checkbox" ng-model="option.selected" ng-change="MultiSelected(option)">
+           </label>
+           {{ option.name}}
+        </li>
+         
+        </ul>
+
+         <!-- <div class="row">
+            <div class="col col-50"></div>
+            <div class="col col-50">
+              <button class="button button-small button-block button-positive a" ng-click="assignto()">Save</button>
+            </div>
+        </div> -->
+
+  </ion-content>
+
+     <div class = "bar bar-footer">
+      <h1 class = "title" style="color:#fff" ng-click="assignto()">Save</h1>
+     </div> 
+
+     <script id="templates/multipleSelect.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar align-title="center">
+            <button class="button button-icon ion-close assign" ng-click="closeModal();"></button>
+            <h1 class="title">{{multipleSelect.title}}</h1>
+            <button class="button button-icon ion-checkmark assign" ng-click="saveOptions();"></button>
+        </ion-header-bar>
+        <ion-content scroll="false">
+            <ul class="list">
+                <li class="item item-toggle" ng-repeat="option in multipleSelect.tempOptions" ng-if="!multipleSelect.renderCheckbox">
+                    {{ option[multipleSelect.valueProperty] }}
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" ng-model="option[multipleSelect.selectedProperty]">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <li class="item item-checkbox" ng-repeat="option in multipleSelect.tempOptions" ng-if="multipleSelect.renderCheckbox">
+                   <label class="checkbox">
+                     <input type="checkbox" ng-model="option[multipleSelect.selectedProperty]">
+                   </label>
+                   {{ option[multipleSelect.valueProperty] }}
+                </li>
+            </ul>
+            <div class = "list" ng-show="multipleSelect.tempOptions.length==0">
+             <div class = "item">No Projects</div>
+            </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+</ion-view>
+

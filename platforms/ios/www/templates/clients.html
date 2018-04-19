@@ -1,0 +1,41 @@
+<ion-view cache-view="false">
+  <link href="css/contacts.css" rel="stylesheet" cache-view="false">
+  
+  <ion-header-bar>
+         <div class="row">  
+             <div class="col col-10" ng-click="clientback()"><i class="button-icon ion-android-arrow-back close"></i></div>                        
+             <div class="col col-80" > <p class="titletext">Clients</p></div>
+             <div class="col col-10"><i class="button-icon ion-log-out close" ng-click="logout()"></i></div>
+         </div>
+  </ion-header-bar> 
+    <div class="bar bar-subheader item-input-inset row">
+     <div class="row" >
+        <label class="item-input-wrapper">
+          <i class="icon ion-search"></i>
+          <input type="search" placeholder="Search" ng-model="search">         
+        </label>
+     </div>       
+  </div>
+
+  <ion-content class="content_back search has-header has-subheader" padding="true" has-bouncing="false" ng-init="clientlist()">
+  
+    <div class="card search" ng-repeat="x in ClientsDetails | orderBy : 'name' | filter:search">
+      <div class="item item-text-wrap" ng-click="contactlist(x)">
+       <b style="color:#074F89"> {{x.name}} </b>
+          <div ng-repeat="y in x.projects" style="margin-left: 20px;color:#006400">
+            {{y.name}}
+          </div>
+      </div>
+    </div>
+     <div class="list" style="color:red;text-align: center;" ng-show="ClientsDetails.length==0 || (ClientsDetails | filter:search).length==0">
+       No Clients found 
+    </div>          
+  </ion-content>
+</ion-view>
+
+
+
+ 
+
+
+    
