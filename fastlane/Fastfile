@@ -35,7 +35,10 @@ platform :ios do
           "codeSignIdentity": "iPhone Distribution",
           "provisioningProfile": "#{profile_uuid}",
           "packageType": "ad-hoc",
-          "developmentTeam": ENV["FASTLANE_TEAM_ID"]
+          "developmentTeam": ENV["FASTLANE_TEAM_ID"],
+          "appURL": "https://server.local/apps/TestApp.ipa",
+          "displayImageURL": "https://server.local/apps/TestApp.png",
+          "fullSizeImageURL": "https://server.local/apps/TestApp.png"
         }
       }
     }
