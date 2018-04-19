@@ -6,7 +6,6 @@
 *.log
 *.tmp
 *.tmp.*
-log.txt
 *.sublime-project
 *.sublime-workspace
 .vscode/
@@ -24,10 +23,8 @@ tmp/
 temp/
 hooks/
 platforms/
-plugins/
 plugins/android.json
 plugins/ios.json
-www/
 $RECYCLE.BIN/
 
 .DS_Store

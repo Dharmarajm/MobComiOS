@@ -1,0 +1,96 @@
+<ion-view cache-view="false">
+  <link href="css/projectlist.css" rel="stylesheet" cache-view="false">
+  <ion-header-bar>
+         <div class="row">
+             <div class="col col-10" ng-click="empinfoback()"><i class="button-icon ion-android-arrow-back close"></i></div>             
+             <div class="col col-80" > <p class="titletext">Employee Information</p></div>
+             <div class="col col-10" ng-click="logout()"><i class="button-icon ion-log-out close" ></i></div>
+         </div>
+  </ion-header-bar>   
+  <ion-content has-bouncing="false">
+     <div class="row">
+       <div class="col col-offset-05 col-95">
+         <h5>Employee Information</h5>   
+       </div>
+     </div>
+     <div class="row">
+       <div class="col col-offset-05 col-35">
+         <p>First Name</p>
+       </div>
+       <div class="col col-10">
+         <p>:</p>
+       </div>
+       <div class="col col-50">
+         <p>{{empdetail.first_name}}</p>
+       </div>
+     </div>  
+     <div class="row">
+       <div class="col col-offset-05 col-35">
+         <p>Last Name</p>
+       </div>
+       <div class="col col-10">
+         <p>:</p>
+       </div>
+       <div class="col col-50">
+         <p>{{empdetail.last_name}}</p>
+       </div>
+     </div>  
+     <div class="row">
+       <div class="col col-offset-05 col-35">
+         <p>Date of Birth</p>
+       </div>
+       <div class="col col-10">
+         <p>:</p>
+       </div>
+       <div class="col col-50">
+         <p>{{empdetail.date_of_birth}}</p>
+       </div>
+     </div>  
+     <div class="row">
+       <div class="col col-offset-05 col-35">
+         <p>Mobile Number</p>
+       </div>
+       <div class="col col-10">
+         <p>:</p>
+       </div>
+       <div class="col col-50">
+         <p>{{empdetail.mobile_number}}</p>
+       </div>
+     </div>  
+     <div class="row">
+       <div class="col col-offset-05 col-35">
+         <p>Email</p>
+       </div>
+       <div class="col col-10">
+         <p>:</p>
+       </div>
+       <div class="col col-50">
+         <p>{{empdetail.email}}</p>
+       </div>
+     </div>  
+     <div class="row">
+       <div class="col col-offset-05 col-35">
+         <p>Designation</p>
+       </div>
+       <div class="col col-10">
+         <p>:</p>
+       </div>
+       <div class="col col-50">
+         <p>{{empdetail.designation}}</p>
+       </div>
+     </div>  
+     <div class="row">
+       <div class="col col-offset-05 col-95">
+         <h5>Employee Address</h5>   
+       </div>
+     </div>
+     <div class="row">
+       <div class="col col-offset-05">
+         <p>{{empdetail.street}}</p>
+         <p>{{empdetail.city}} {{empdetail.pincode}}</p>
+         <p>{{empdetail.state}}</p>
+         <p>{{empdetail.country}}</p>
+       </div> 
+     </div>  
+  </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view cache-view="false">
+  <link href="css/projectlist.css" rel="stylesheet" cache-view="false">
+  
+  <ion-header-bar>
+         <div class="row">   
+             <div class="col col-10" ng-click="costback()"><i class="button-icon ion-android-arrow-back close"></i></div>                             
+             <div class="col col-80" > <p class="titletext">Create Project</p></div>
+             <div class="col col-10"><i class="button-icon ion-log-out close" ng-click="logout()"></i></div>
+         </div>
+  </ion-header-bar>     
+  
+  
+  <ion-content class="content_back" padding="true" has-bouncing="false" ng-init="newPro()">
+        <div class="row">
+          <div class="col col-50">Client Name</div>
+          <div class="col col-50">
+             <select ng-model="clientnameside"  ng-change="clientname(clientnameside)" ng-options="g.name for g in ClientDetails" style="width:100%">
+              <option value="" style="display:true">---Select---</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-50">Project Name</div>
+          <div class="col col-50">
+             <input type="text" name="name" ng-model="name" style="width:100%">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-50">Budget</div>
+          <div class="col col-50">
+             <input type="number" name="budget" ng-model="budget" style="width:100%">
+          </div>
+        </div>
+
+         <div class="row">
+            <div class="col col-50"></div>
+            <div class="col col-50">
+              <button class="button button-small button-block button-positive a" ng-click="createproject(name,budget)">Save</button>
+            </div>
+        </div>
+
+  </ion-content>
+</ion-view>

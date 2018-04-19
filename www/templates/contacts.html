@@ -1,0 +1,56 @@
+<ion-view cache-view="false">
+  <link href="css/contacts.css" rel="stylesheet" cache-view="false">
+  
+  <ion-header-bar>
+         <div class="row">  
+             <div class="col col-10" ng-click="contactback()"><i class="button-icon ion-android-arrow-back close"></i></div>           
+             <div class="col col-80" > <p class="titletext">Contacts</p></div>
+             <div class="col col-10"><i class="button-icon ion-log-out close" ng-click="logout()"></i></div>
+         </div>
+  </ion-header-bar>   
+  <ion-content class="content_back" padding="true" has-bouncing="false">
+
+      <h5><b>Address</b></h5>
+      {{ClientID.street}} <br>
+      {{ClientID.city}} {{ClientID.pincode}}<br>
+      {{ClientID.state}}<br>
+      {{ClientID.country}}<br>
+      <br>
+     <div class="list" ng-repeat="contact in ContactsDetails">
+            <a class="item item-avatar item-icon-right">
+              <img src="img/contact.png">
+              <h2>{{contact.name}}</h2>
+              <p>{{contact.designation}}</p>         
+             </a>
+            <a class="item row">
+              <i class="icon icon-clr line ion-android-call col col-50" ng-href="tel:{{contact.mobile_number}}" ng-click="call(contact.mobile_number,contact.id);CallPost(emp.id)">&nbsp;CALL</i>
+              <i class="icon icon-clr ion-android-textsms col col-50" ng-click="openModal(contact.mobile_number,contact.id,contact.name)">&nbsp;MESSAGE</i>
+            </a>
+      </div>
+      <div class="list" ng-show="ContactsDetails.length==0" style="color:red">
+          No Contacts  
+      </div>
+
+     
+  </ion-content>
+
+     <script id="templates/modal.html" type="text/ng-template">
+            <ion-modal-view> 
+              <ion-header-bar>
+                <div class="row">
+                  <div class="col col-20" ng-click="closeModal()"><i class="button-icon ion-ios-arrow-back close"></i></div>             
+                  <div class="col col-80" > <p class="titletext">Message</p></div>
+                </div>
+              </ion-header-bar>
+              <ion-content>                                        
+                  <div class="list list-inset">
+                      <p>To : {{nameOpen}}</p>
+                      <textarea  class="brd-txt" rows="4" style="width:100%;"" ng-model="contactMode.response" ng-required="true" placeholder="Text Message here"></textarea>
+                      <button ng-disabled="!contactMode.response" ng-click="popup(mNumber,selectedId,contactMode.response);closeModal();SMSPost(selectedId,contactMode.response)" class="button button-block button-positive">Send</button>
+                  </div>                        
+              </ion-content>                    
+            </ion-modal-view>
+      </script>     
+</ion-view>
+
+
