@@ -39,15 +39,7 @@ platform :ios do
         }
       }
     }
-gym(
-  export_options: {
-  method: "ad-hoc",
-  manifest: {
-    appURL: "#{ipa_path}",
-  },
-  thinning: "<thin-for-all-variants>"
- }
-)
+   
     # Writing build.json to platforms/ios directory
     out_file = File.new("../platforms/ios/build.json", "w")
     out_file.puts(JSON.generate(build_json))
@@ -60,7 +52,11 @@ gym(
     ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
     ipa_path = File.absolute_path ipa_path
     UI.success "Successfully built IPA: #{ipa_path}"
-   
+    
+    #gym
+
+    gym
+
     #deliver
 
    #deliver(
