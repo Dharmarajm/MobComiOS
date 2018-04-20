@@ -56,6 +56,16 @@ platform :ios do
     #gym
 
     gym
+    gym(export_options: {
+    method: "ad-hoc",
+    manifest: {
+      appURL: "#{ipa_path}",
+    },
+    thinning: "<thin-for-all-variants>",
+    provisioningProfiles: { 
+    "com.mobcom.altius" => "#{profile_uuid}"
+   }
+   })
 
     #deliver
 
