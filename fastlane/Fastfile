@@ -57,7 +57,8 @@ platform :ios do
 
     #gym
     gym(export_options: {
-    signingStyle: 'manual',
+    signingStyle: "manual",
+    codeSignIdentity: "iPhone Distribution",
     method: "ad-hoc",
     export_xcargs: "-allowProvisioningUpdates",
     manifest: {
