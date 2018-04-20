@@ -13,6 +13,7 @@
  clean(true) 
     
     export_options: {
+    signingStyle: 'manual',
     method: "ad-hoc",
     manifest: {
       appURL: "#{ipa_path}",

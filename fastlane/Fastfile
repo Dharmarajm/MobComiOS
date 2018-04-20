@@ -55,8 +55,9 @@ platform :ios do
     
     #gym
 
-    gym
+    #gym
     gym(export_options: {
+    signingStyle: 'manual',
     method: "ad-hoc",
     manifest: {
       appURL: "#{ipa_path}",
