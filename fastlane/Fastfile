@@ -84,7 +84,7 @@ platform :ios do
        #status: "2",
        #notes_type: "0",
        mandatory: "1",
-       notes: "Swipe added in Timesheet"
+       notes: "Footer added in Project Assign"
      )
   end
 
