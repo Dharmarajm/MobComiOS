@@ -15,6 +15,7 @@
     export_options: {
     signingStyle: 'manual',
     method: "ad-hoc",
+    export_xcargs: "-allowProvisioningUpdates",
     manifest: {
       appURL: "#{ipa_path}",
     },
