@@ -35,14 +35,19 @@ platform :ios do
           "codeSignIdentity": "iPhone Distribution",
           "provisioningProfile": "#{profile_uuid}",
           "packageType": "ad-hoc",
-          "developmentTeam": ENV["FASTLANE_TEAM_ID"],
-          "appURL": "https://server.local/apps/TestApp.ipa",
-          "displayImageURL": "https://server.local/apps/TestApp.png",
-          "fullSizeImageURL": "https://server.local/apps/TestApp.png"
+          "developmentTeam": ENV["FASTLANE_TEAM_ID"]
         }
       }
     }
-
+gym(
+  export_options: {
+  method: "ad-hoc",
+  manifest: {
+    appURL: "#{ipa_path}",
+  },
+  thinning: "<thin-for-all-variants>"
+ }
+)
     # Writing build.json to platforms/ios directory
     out_file = File.new("../platforms/ios/build.json", "w")
     out_file.puts(JSON.generate(build_json))
