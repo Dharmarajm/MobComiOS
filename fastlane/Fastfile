@@ -54,10 +54,12 @@ platform :ios do
     UI.success "Successfully built IPA: #{ipa_path}"
     
     #gym
-    gym(
+    export_options= {
     scheme: 'adhoc',
-    signingStyle: "manual",
+    configuration: 'adhoc',
+    #signingStyle: "automatic",
     codeSignIdentity: "iPhone Distribution",
+    method: "ad-hoc",
     export_xcargs: "-allowProvisioningUpdates",
     manifest: {
       appURL: "https://server.local/apps/MobCom.ipa",
@@ -68,7 +70,7 @@ platform :ios do
     provisioningProfiles: { 
     "com.mobcom.altius" => "MarginAdhoc"
     }
-    )
+   }
     #deliver
 
    #deliver(

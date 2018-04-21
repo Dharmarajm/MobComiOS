@@ -6,14 +6,16 @@
 
 # Remove the # in front of the line to enable the option
 
- scheme("Example")
+ #scheme("Example")
 
- sdk("iphoneos9.0")
+ #sdk("iphoneos9.0")
 
- clean(true) 
+ #clean(true) 
     
     export_options= {
-    signingStyle: "manual",
+    scheme: 'adhoc',
+    configuration: 'adhoc',
+    #signingStyle: "automatic",
     codeSignIdentity: "iPhone Distribution",
     method: "ad-hoc",
     export_xcargs: "-allowProvisioningUpdates",
@@ -29,5 +31,5 @@
    }
 
 output_directory("./build")    # store the ipa in this folder
-output_name("MyApp")           # the name of the ipa file
+output_name("MobCom")           # the name of the ipa file
 #output_directory("./")
