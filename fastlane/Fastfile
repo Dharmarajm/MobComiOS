@@ -67,7 +67,7 @@ platform :ios do
       #codeSignIdentity: "iPhone Distribution",
       output_directory:"~/Library/Developer/Xcode/Archives/",
       buildlog_path:"~/Library/Logs/fastlane/xcbuild",
-      output_name:"MobCom.ipa")
+      output_name:"MobCom.ipa",
       export_options = {
       method: "ad-hoc",
       signingStyle: "manual",
@@ -82,6 +82,7 @@ platform :ios do
         ENV['SIGH_APP_IDENTIFIER'] => ENV['SIGH_PROVISIONING_PROFILE_NAME']
       },
       signingCertificate: "iPhone Distribution"}
+      )
     
     #deliver
 
