@@ -69,7 +69,7 @@ platform :ios do
       },
       thinning: "<thin-for-all-variants>",
       provisioningProfiles: { 
-      "com.mobcom.altius" => "MarginAdhoc"
+      "com.mobcom.altius" => "Mobcomdis"
       }
       }
     )
