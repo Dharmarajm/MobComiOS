@@ -18,7 +18,9 @@
     method: "ad-hoc",
     export_xcargs: "-allowProvisioningUpdates",
     manifest: {
-      appURL: Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first,
+      appURL: "https://server.local/apps/MobCom.ipa",
+      displayImageURL: "https://server.local/apps/TestApp.png",
+      fullSizeImageURL: "https://server.local/apps/TestApp.png"
     },
     thinning: "<thin-for-all-variants>",
     provisioningProfiles: { 

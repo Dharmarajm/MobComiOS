@@ -1,0 +1,46 @@
+<ion-view cache-view="false">
+  <link href="css/projectlist.css" rel="stylesheet" cache-view="false">
+  
+  <ion-header-bar>
+         <div class="row"> 
+             <div class="col col-10" ng-click="teamback()"><i class="button-icon ion-android-arrow-back close"></i></div>            
+             <div class="col col-80" > <p class="titletext1">{{Projectname}} - Teams</p></div>
+             <div class="col col-10"><i class="button-icon ion-log-out close" ng-click="logout()"></i></div>
+         </div>
+  </ion-header-bar>   
+  <ion-content class="content_back" padding="true" has-bouncing="false" >
+      <div class="list" ng-repeat="team in TeamMember | orderBy : 'first_name'"> <!-- | orderBy : 'first_name'" -->
+            <a class="item item-avatar item-icon-right">
+              <img src="img/contact.png">
+              <h2>{{team.first_name}}</h2>
+              <p>{{team.designation}}</p>
+             </a>
+            <a class="item row">
+              <i class="icon icon-clr line ion-android-call col col-30" ng-href="tel:{{team.mobile_number}}" ng-click="call(team.mobile_number,team.id);CallPost(team.id)">&nbsp;CALL</i>
+              <i class="icon icon-clr line ion-android-textsms col col-30" ng-click="openModal(team.mobile_number,team.id,team.first_name)">&nbsp;MESSAGE</i>
+              <i class="icon icon-clr ion-more col col-40" ng-click="moreDetail(team)">&nbsp;More Details</i>
+            </a>
+      </div>
+      <div class="list" style="color:red;text-align:center;" ng-show="(TeamMember | orderBy : 'first_name').length==0">
+         No Teams found 
+      </div>
+
+  </ion-content>
+  <script id="modal.html" type="text/ng-template">
+            <ion-modal-view> 
+              <ion-header-bar>
+                <div class="row">
+                  <div class="col col-20" ng-click="closeModal()"><i class="button-icon ion-ios-arrow-back close"></i></div>             
+                  <div class="col col-80" > <p class="titletext">Message</p></div>
+                </div>
+              </ion-header-bar>
+              <ion-content>                                        
+                  <div class="list list-inset">
+                      <p>To : {{nameOpen}}</p>
+                      <textarea  class="brd-txt" rows="4" style="width:100%;" ng-model="teamMode.response" ng-required="true" placeholder="Text Message here"></textarea>
+                      <button ng-disabled="!teamMode.response" ng-click="popup(mNumber,selectedId,teamMode.response);closeModal();SMSPost(selectedId,teamMode.response)" class="button button-block button-positive">Send</button>
+                  </div>                        
+              </ion-content>                    
+            </ion-modal-view>
+      </script>
+</ion-view>

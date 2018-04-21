@@ -7,34 +7,19 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
         "cordova-plugin-app-version": {
             "PACKAGE_NAME": "com.mobcom.altius"
         },
         "cordova-plugin-call-number": {
             "PACKAGE_NAME": "com.mobcom.altius"
         },
-        "cordova-plugin-file": {
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "com.mobcom.altius"
         },
-        "cordova-sms-plugin": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.mobcom.altius"
+        },
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.mobcom.altius"
         },
         "cordova-plugin-hockeyapp": {
@@ -42,6 +27,21 @@
         },
         "cordova-plugin-image-picker": {
             "PHOTO_LIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.mobcom.altius"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.mobcom.altius"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.mobcom.altius"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.mobcom.altius"
+        },
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "com.mobcom.altius"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.mobcom.altius"
         }
     },

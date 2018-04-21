@@ -5,27 +5,27 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: produce" time="6.676369">
+      <testcase classname="fastlane.lanes" name="0: produce" time="8.009708">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: cert" time="6.589134">
+      <testcase classname="fastlane.lanes" name="1: cert" time="10.253586">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: sigh" time="12.898484">
+      <testcase classname="fastlane.lanes" name="2: sigh" time="13.303043">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: (cd .. &amp;&amp; ionic platform add ios)" time="27.892727">
+      <testcase classname="fastlane.lanes" name="3: (cd .. &amp;&amp; ionic platform add ios)" time="54.57876">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: (cd .. &amp;&amp; ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)" time="30.981232">
+      <testcase classname="fastlane.lanes" name="4: (cd .. &amp;&amp; ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)" time="221.467532">
         
       </testcase>
     
