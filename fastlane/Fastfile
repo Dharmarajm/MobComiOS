@@ -81,9 +81,9 @@ platform :ios do
       provisioningProfiles: {
         ENV['SIGH_APP_IDENTIFIER'] => ENV['SIGH_PROVISIONING_PROFILE_NAME']
       },
-      signingCertificate: "iPhone Distribution"}
-      )
-    
+      signingCertificate: "iPhone Distribution"
+      }
+      )    
     #deliver
 
    #deliver(
