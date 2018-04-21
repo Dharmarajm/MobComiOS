@@ -46,16 +46,8 @@ platform :ios do
     out_file.close
     
     # Build iOS release IPA
-    sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
-    
-    # Get IPA path
-    ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
-    ipa_path = File.absolute_path ipa_path
-    UI.success "Successfully built IPA: #{ipa_path}"
-    
-    #gym
-    #bundleIdentifier = ENV["PRODUCE_APP_IDENTIFIER"]
-    #profile = "match AdHoc Mobcomdis"
+   
+   # sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
     gym(scheme: "Mobcom",
       clean: true,
       export_method: "ad-hoc",
@@ -83,7 +75,17 @@ platform :ios do
       },
       signingCertificate: "iPhone Distribution"
       }
-      )    
+      )
+    
+    # Get IPA path
+    ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
+    ipa_path = File.absolute_path ipa_path
+    UI.success "Successfully built IPA: #{ipa_path}"
+    
+    #gym
+    #bundleIdentifier = ENV["PRODUCE_APP_IDENTIFIER"]
+    #profile = "match AdHoc Mobcomdis"
+   
     #deliver
 
    #deliver(
