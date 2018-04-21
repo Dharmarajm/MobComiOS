@@ -54,24 +54,36 @@ platform :ios do
     UI.success "Successfully built IPA: #{ipa_path}"
     
     #gym
+    #bundleIdentifier = ENV["PRODUCE_APP_IDENTIFIER"]
+    #profile = "match AdHoc Mobcomdis"
     gym(
-      export_options= {
-      scheme: 'adhoc',
-      configuration: 'adhoc',
-      #signingStyle: "automatic",
-      codeSignIdentity: "iPhone Distribution",
+      scheme: "Mobcom",
+      clean: true,
+      export_method: "ad-hoc",
+      export_team_id: ENV["FASTLANE_TEAM_ID"],
+      include_bitcode: false,
+      include_symbols: true,
+      configuration: "Release",
+      #export_xcargs: "-allowProvisioningUpdates",
+      #codeSignIdentity: "iPhone Distribution",
+      output_directory:"~/Library/Developer/Xcode/Archives/",
+      buildlog_path:"~/Library/Logs/fastlane/xcbuild",
+      output_name:"MobCom.ipa",
+      export_options = {
       method: "ad-hoc",
-      export_xcargs: "-allowProvisioningUpdates",
+      signingStyle: "manual",
+      teamID: ENV["FASTLANE_TEAM_ID"],  
       manifest: {
-        appURL: "https://server.local/apps/MobCom.ipa",
-        displayImageURL: "https://server.local/apps/TestApp.png",
-        fullSizeImageURL: "https://server.local/apps/TestApp.png"
+          appURL: "https://server.local/apps/MobCom.ipa",
+          displayImageURL: "https://server.local/TestApp.png",
+          fullSizeImageURL: "https://server.local/TestApp.png"
       },
       thinning: "<thin-for-all-variants>",
-      provisioningProfiles: { 
-      "com.mobcom.altius" => "Mobcomdis"
-      }
-      }
+      provisioningProfiles: {
+        ENV['SIGH_APP_IDENTIFIER'] => ENV['SIGH_PROVISIONING_PROFILE_NAME']
+      },
+      signingCertificate: "iPhone Distribution"
+     }
     )
     #deliver
 
