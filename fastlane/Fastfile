@@ -80,7 +80,7 @@ platform :ios do
       thinning: "<thin-for-all-variants>",
       provisioningProfiles: {
         ENV['SIGH_APP_IDENTIFIER'] => ENV['SIGH_PROVISIONING_PROFILE_NAME']
-      })
+      }})
     
     #deliver
 
