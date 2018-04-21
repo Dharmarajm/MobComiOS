@@ -54,23 +54,25 @@ platform :ios do
     UI.success "Successfully built IPA: #{ipa_path}"
     
     #gym
-    export_options= {
-    scheme: 'adhoc',
-    configuration: 'adhoc',
-    #signingStyle: "automatic",
-    codeSignIdentity: "iPhone Distribution",
-    method: "ad-hoc",
-    export_xcargs: "-allowProvisioningUpdates",
-    manifest: {
-      appURL: "https://server.local/apps/MobCom.ipa",
-      displayImageURL: "https://server.local/apps/TestApp.png",
-      fullSizeImageURL: "https://server.local/apps/TestApp.png"
-    },
-    thinning: "<thin-for-all-variants>",
-    provisioningProfiles: { 
-    "com.mobcom.altius" => "MarginAdhoc"
-    }
-   }
+    gym(
+      export_options= {
+      scheme: 'adhoc',
+      configuration: 'adhoc',
+      #signingStyle: "automatic",
+      codeSignIdentity: "iPhone Distribution",
+      method: "ad-hoc",
+      export_xcargs: "-allowProvisioningUpdates",
+      manifest: {
+        appURL: "https://server.local/apps/MobCom.ipa",
+        displayImageURL: "https://server.local/apps/TestApp.png",
+        fullSizeImageURL: "https://server.local/apps/TestApp.png"
+      },
+      thinning: "<thin-for-all-variants>",
+      provisioningProfiles: { 
+      "com.mobcom.altius" => "MarginAdhoc"
+      }
+      }
+    )
     #deliver
 
    #deliver(
