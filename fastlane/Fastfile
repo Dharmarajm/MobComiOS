@@ -56,7 +56,7 @@ platform :ios do
       #include_symbols: true,
       configuration: "Release",
       #export_xcargs: "-allowProvisioningUpdates",
-      #codeSignIdentity: "iPhone Distribution",
+      codeSignIdentity: "iPhone Distribution",
       skip_profile_detection: true,
       output_directory:"~/Library/Developer/Xcode/Archives/",
       buildlog_path:"~/Library/Logs/fastlane/xcbuild",
