@@ -55,14 +55,14 @@ platform :ios do
       include_bitcode: false,
       include_symbols: true,
       configuration: "Release",
-      export_xcargs: "-allowProvisioningUpdates",
+      #export_xcargs: "-allowProvisioningUpdates",
       #codeSignIdentity: "iPhone Distribution",
       output_directory:"~/Library/Developer/Xcode/Archives/",
       buildlog_path:"~/Library/Logs/fastlane/xcbuild",
       output_name:"MobCom.ipa",
       export_options: {
       method: "ad-hoc",
-      signingStyle: "automatic",
+      signingStyle: "manual",
       teamID: ENV["FASTLANE_TEAM_ID"],  
       manifest: {
           appURL: "https://server.local/apps/MobCom.ipa",
