@@ -48,6 +48,10 @@ platform :ios do
     # Build iOS release IPA
    
    # sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
+    
+    To Remove archive folder
+    sh "rm -r \"#{lane_context[SharedValues::XCODEBUILD_ARCHIVE]}\""
+    
     gym(scheme: "Mobcom",
       clean: true,
       export_method: "ad-hoc",
@@ -61,9 +65,10 @@ platform :ios do
       output_directory:"~/Library/Developer/Xcode/Archives/",
       buildlog_path:"~/Library/Logs/fastlane/xcbuild",
       output_name:"MobCom.ipa",
+      #skip_build_archive: true,
       export_options: {
       method: "ad-hoc",
-      signingStyle: "manual",
+      signingStyle: "automatic",
       teamID: ENV["FASTLANE_TEAM_ID"],  
       manifest: {
           appURL: "https://server.local/apps/MobCom.ipa",
