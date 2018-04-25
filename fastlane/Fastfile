@@ -55,7 +55,7 @@ platform :ios do
    # sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
     
     To Remove archive folder
-    sh "rm -r \"#{lane_context[SharedValues::XCODEBUILD_ARCHIVE]}\""
+    # sh "rm -r \"#{lane_context[SharedValues::XCODEBUILD_ARCHIVE]}\""
     
     gym(scheme: "Mobcom",
       clean: true,
