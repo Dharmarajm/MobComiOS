@@ -19,12 +19,12 @@ platform :ios do
     cert
     
     # Create/fetch provisioning profile
-    profile_uuid = get_provisioning_profile( adhoc: true,
-                                             readonly: true,
-                                             provisioning_name:ENV['SIGH_PROVISIONING_PROFILE_NAME'],
-                                             username:ENV['FASTLANE_USER']
-                                           )
-    
+    get_provisioning_profile( adhoc: true,
+                              readonly: true,
+                              provisioning_name:ENV['SIGH_PROVISIONING_PROFILE_NAME'],
+                              username:ENV['FASTLANE_USER']
+                            )
+    profile_uuid=sigh
 
     # Delete iOS platform
       FileUtils.rm_rf('../platforms/ios')
