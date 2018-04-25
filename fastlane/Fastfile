@@ -19,12 +19,12 @@ platform :ios do
     cert
     
     # Create/fetch provisioning profile
-    get_provisioning_profile( adhoc: true,
-                              readonly: true,
-                              provisioning_name:ENV['SIGH_PROVISIONING_PROFILE_NAME'],
-                              username:ENV['FASTLANE_USER']
-                            )
-    profile_uuid=sigh
+    profile_uuid = get_provisioning_profile( adhoc: true,
+                                             readonly: true,
+                                             provisioning_name:ENV['SIGH_PROVISIONING_PROFILE_NAME'],
+                                             username:ENV['FASTLANE_USER']
+                                           )
+    
 
     # Delete iOS platform
       FileUtils.rm_rf('../platforms/ios')
@@ -54,7 +54,7 @@ platform :ios do
    
    # sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
     
-    To Remove archive folder
+    # To Remove archive folder
     # sh "rm -r \"#{lane_context[SharedValues::XCODEBUILD_ARCHIVE]}\""
     
     gym(scheme: "Mobcom",
