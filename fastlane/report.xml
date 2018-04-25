@@ -4,30 +4,5 @@
     
     
     
-      
-      <testcase classname="fastlane.lanes" name="0: produce" time="7.197432">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="1: cert" time="9.46976">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="2: sigh" time="11.276573">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="3: (cd .. &amp;&amp; ionic platform add ios)" time="53.331664">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="4: (cd .. &amp;&amp; ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)" time="27.231269">
-        
-      </testcase>
-    
   </testsuite>
 </testsuites>
