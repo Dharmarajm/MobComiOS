@@ -87,6 +87,7 @@ platform :ios do
       )
     
     # Get IPA path
+    UI.success "Successfully built IPA: #{output_directory}"
     ipa_path = Dir.glob(File.join(Dir.pwd, "~/Library/Developer/Xcode/Archives/*.ipa")).first
     UI.error "error built IPA: #{ipa_path}"
     UI.success "success built IPA: #{ipa_path}"
