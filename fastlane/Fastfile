@@ -88,6 +88,9 @@ platform :ios do
     
     # Get IPA path
     ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
+    UI.error "error built IPA: #{ipa_path}"
+    ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa"))
+    UI.success "success built IPA: #{ipa_path}"
     ipa_path = File.absolute_path ipa_path
     UI.success "Successfully built IPA: #{ipa_path}"
     
