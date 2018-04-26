@@ -35,21 +35,21 @@ platform :ios do
     
     # Creating build.json folder to be used for release signing
     # This will get placed in our platforms/ios directory
-    build_json = {
-      "ios": {
-        "release": {
-          "codeSignIdentity": "iPhone Distribution",
-          "provisioningProfile": "#{profile_uuid}",
-          "packageType": "ad-hoc",
-          "developmentTeam": ENV["FASTLANE_TEAM_ID"]
-        }
-      }
-    }
+   # build_json = {
+   #   "ios": {
+   #     "release": {
+    #      "codeSignIdentity": "iPhone Distribution",
+    #      "provisioningProfile": "#{profile_uuid}",
+    #      "packageType": "ad-hoc",
+    #      "developmentTeam": ENV["FASTLANE_TEAM_ID"]
+    #    }
+    #  }
+    # }
    
     # Writing build.json to platforms/ios directory
-    out_file = File.new("../platforms/ios/build.json", "w")
-    out_file.puts(JSON.generate(build_json))
-    out_file.close
+   # out_file = File.new("../platforms/ios/build.json", "w")
+   # out_file.puts(JSON.generate(build_json))
+   # out_file.close
     
     # Build iOS release IPA
    
