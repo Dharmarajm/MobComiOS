@@ -72,7 +72,7 @@ platform :ios do
       #skip_build_archive: true,
       export_options: {
       method: "ad-hoc",
-      signingStyle: "automatic",
+      signingStyle: "manual",
       teamID: ENV["FASTLANE_TEAM_ID"],
       manifest: {
           appURL: "https://server.local/apps/MobCom.ipa",
