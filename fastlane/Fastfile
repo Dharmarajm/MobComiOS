@@ -35,25 +35,24 @@ platform :ios do
     
     # Creating build.json folder to be used for release signing
     # This will get placed in our platforms/ios directory
-   # build_json = {
-   #   "ios": {
-   #     "release": {
-    #      "codeSignIdentity": "iPhone Distribution",
-    #      "provisioningProfile": "#{profile_uuid}",
-    #      "packageType": "ad-hoc",
-    #      "developmentTeam": ENV["FASTLANE_TEAM_ID"]
-    #    }
-    #  }
-    # }
+    build_json = {
+      "ios": {
+        "release": {
+         "codeSignIdentity": "iPhone Distribution",
+         "provisioningProfile": "#{profile_uuid}",
+         "packageType": "ad-hoc",
+         "developmentTeam": ENV["FASTLANE_TEAM_ID"]
+       }
+     }
+    }
    
     # Writing build.json to platforms/ios directory
-   # out_file = File.new("../platforms/ios/build.json", "w")
-   # out_file.puts(JSON.generate(build_json))
-   # out_file.close
+    out_file = File.new("../platforms/ios/build.json", "w")
+    out_file.puts(JSON.generate(build_json))
+    out_file.close
     
-    # Build iOS release IPA
-   
-    # sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
+   # Build iOS release IPA
+    sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
     
     
     gym(scheme: "Mobcom",
@@ -72,7 +71,7 @@ platform :ios do
       #skip_build_archive: true,
       export_options: {
       method: "ad-hoc",
-      signingStyle: "manual",
+      signingStyle: "automatic",
       teamID: ENV["FASTLANE_TEAM_ID"],
       manifest: {
           appURL: "https://server.local/apps/MobCom.ipa",
