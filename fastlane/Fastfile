@@ -88,7 +88,7 @@ platform :ios do
     
     # Get IPA path
     #ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
-    ipa_path = Dir.glob('Users/altius-mac/Library/Developer/Xcode/Archives/Apps/*.ipa').first
+    ipa_path = Dir.glob('/Users/altius-mac/Library/Developer/Xcode/Archives/Apps/*.ipa').first
     UI.success "IPA PATH: #{ipa_path}"
     ipa_path = File.absolute_path ipa_path
     UI.success "Successfully built IPA: #{ipa_path}"
