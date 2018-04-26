@@ -17,20 +17,21 @@ platform :ios do
     
     # Create distribution cert
     cert
-    
+    UI.success "Successfully built cert: #{cert}"
     # Create/fetch provisioning profile
     profile_uuid = get_provisioning_profile( adhoc: true,
                                              readonly: true,
                                              provisioning_name:ENV['SIGH_PROVISIONING_PROFILE_NAME'],
                                              username:ENV['FASTLANE_USER']
                                            )
-    
+    UI.success "Successfully built uuid: #{profile_uuid}"
 
     # Delete iOS platform
       FileUtils.rm_rf('../platforms/ios')
     
     # Add iOS platform
     sh "(cd .. && ionic platform add ios)"
+    UI.success "Successfully built uuid: #{profile_uuid}"
     
     # Creating build.json folder to be used for release signing
     # This will get placed in our platforms/ios directory
@@ -52,10 +53,8 @@ platform :ios do
     
     # Build iOS release IPA
    
-   # sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
+    # sh "(cd .. && ionic build ios --device --prod --release --buildConfig=./platforms/ios/build.json)"
     
-    # To Remove archive folder
-    # sh "rm -r \"#{lane_context[SharedValues::XCODEBUILD_ARCHIVE]}\""
     
     gym(scheme: "Mobcom",
       clean: true,
