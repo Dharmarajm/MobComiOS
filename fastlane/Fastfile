@@ -73,7 +73,7 @@ platform :ios do
       export_options: {
       method: "ad-hoc",
       signingStyle: "automatic",
-      teamID: ENV["FASTLANE_TEAM_ID"],  
+      teamID: ENV["FASTLANE_TEAM_ID"],
       manifest: {
           appURL: "https://server.local/apps/MobCom.ipa",
           displayImageURL: "https://server.local/TestApp.png",
