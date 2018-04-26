@@ -17,7 +17,7 @@ platform :ios do
     
     # Create distribution cert
     cert
-    UI.success "Successfully built cert: #{cert}"
+
     # Create/fetch provisioning profile
     profile_uuid = get_provisioning_profile( adhoc: true,
                                              readonly: true,
