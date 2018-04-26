@@ -110,20 +110,20 @@ platform :ios do
   #)
 
     # hockey distribution
-     hockey(
-       api_token: "01610e60aab4493aaae5a5600e7b0e8c",
-       #upload_dsym_only: false,
-       #create_update: true,
-       #public_identifier: "com.mobcom.altius",
-       #bundle_short_version: "0.0.1",
-       #bundle_version: "0.0.1",
-       ipa: "#{ipa_path}",
-       #notify: "1",
-       #status: "2",
-       #notes_type: "0",
-       mandatory: "1",
-       notes: "Footer added in Project Assign"
-     )
+    # hockey(
+    #   api_token: "01610e60aab4493aaae5a5600e7b0e8c",
+    #   #upload_dsym_only: false,
+    #   #create_update: true,
+    #   #public_identifier: "com.mobcom.altius",
+    #   #bundle_short_version: "0.0.1",
+    #   #bundle_version: "0.0.1",
+    #   ipa: "#{ipa_path}",
+    #   #notify: "1",
+    #   #status: "2",
+    #   #notes_type: "0",
+    #   mandatory: "1",
+    #   notes: "Footer added in Project Assign"
+    # )
   end
 
 #lane :beta do
