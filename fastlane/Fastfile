@@ -88,7 +88,7 @@ platform :ios do
     
     # Get IPA path
     #ipa_path = Dir.glob(File.join(Dir.pwd, "../platforms/ios/build/device/*.ipa")).first
-    ipa_path = Dir.glob('/Users/altius-mac/Library/Developer/Xcode/Archives/Apps/Mobcom.ipa').first
+    ipa_path = Dir.glob('/Users/altius-mac/Library/Developer/Xcode/Archives/Mobcom.ipa').first
     UI.success "IPA PATH: #{ipa_path}"
     ipa_path = File.absolute_path ipa_path
     UI.success "Successfully built IPA: #{ipa_path}"
@@ -103,7 +103,7 @@ platform :ios do
     #submit_for_review: false,
     #ipa: ipa_path
    #)
-  #   pilot(
+  #pilot(
   #  username: ENV["FASTLANE_USER"],
   #  wait_processing_interval: 30,
   #  distribute_external: false,
